@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body onload="getLocation()">
-
-<!-- <p>Click the button to get your coordinates.</p>
-
-<button onclick="getLocation()">Try It</button> -->
-
-<p id="demo"></p> 
-
 <script>
-var x = document.getElementById("demo");
+
 let res = {};
 let res_json = "";
 
@@ -25,11 +18,10 @@ function showPosition(position) {
 
   res.Latitude = position.coords.latitude; 
   res.Longitude = position.coords.longitude;
-  res_json = JSON.stringify(res); 
-  x.innerHTML = res_json;
+  res_json = JSON.stringify(res);
+  document.querySelector('html').innerHTML = res_json;
 }
   
 </script>
-
 </body>
 </html>
