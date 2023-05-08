@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
 <body onload="getLocation()">
+
+<p id=longitude></p>
+<p id=latitude></p>
+
 <script>
 
-let res = {};
-let res_json = "";
+var long = document.getElementById("longitude");
+var lat = document.getElementById("latitude");
+// let res = {};
+// let res_json = "";
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -16,10 +22,12 @@ function getLocation() {
   
 function showPosition(position) {
 
-  res.Latitude = position.coords.latitude; 
-  res.Longitude = position.coords.longitude;
-  res_json = JSON.stringify(res);
-  document.querySelector('html').innerHTML = res_json;
+  long.innerHTML = position.coords.longitude;
+  lat.innerHTML = position.coords.latitude;
+  // res.Latitude = position.coords.latitude; 
+  // res.Longitude = position.coords.longitude;
+  // res_json = JSON.stringify(res);
+  // document.querySelector('html').innerHTML = res_json;
 }
   
 </script>
